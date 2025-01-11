@@ -2,13 +2,9 @@
 
 public static class GameState
 {
-    public static bool IsGameOver(char[] board)
+    public static bool IsGameFinished(char[] board)
     {
-        foreach (var content in board)
-            if (content == ' ')
-                return false;
-
-        return true;
+        return HasPlayerWon(board, 'X') || HasPlayerWon(board, 'O') || IsDraw(board);
     }
 
     public static bool HasPlayerWon(char[] board, char player)
@@ -32,9 +28,10 @@ public static class GameState
 
     public static bool IsDraw(char[] board)
     {
-        if (!IsGameOver(board))
-            return false;
+        foreach (var content in board)
+            if (content == ' ')
+                return false;
 
-        return !HasPlayerWon(board, 'X') && !HasPlayerWon(board, 'O');
+        return true;
     }
 }

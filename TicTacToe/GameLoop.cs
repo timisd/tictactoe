@@ -34,7 +34,7 @@ public class GameLoop
             ChangePlayer();
             _ui.StatusTextBlock.Text = $"Current player: {_currentPlayer.Symbol}";
             await _currentPlayer.ExecuteTurn();
-        } while (!GameState.IsGameOver(ConvertButtonsToCharArray(_buttons)));
+        } while (!GameState.IsGameFinished(ConvertButtonsToCharArray(_buttons)));
 
         ShowGameEnd();
     }
@@ -56,9 +56,9 @@ public class GameLoop
             button.IsEnabled = true;
         }
 
-        _ui.OutputTextBox.Text = string.Empty;
+        _ui.OutputTextBox.Text = "";
         _ui.GameOverPanel.Visibility = Visibility.Collapsed;
-        _currentPlayer = _humanPlayer;
+        _currentPlayer = _computerPlayer;
         Game();
     }
 
