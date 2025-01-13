@@ -1,0 +1,48 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TicTacToe.ViewModels"
+             x:Class="TicTacToe.Views.MainPage"
+             x:DataType="local:MainViewModel">
+    <StackLayout Padding="20">
+        <Label Text="{Binding CurrentPlayer}" FontSize="24" HorizontalOptions="Center" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Text="{Binding Cells[0]}"
+                    Command="{Binding MakeMoveCommand}"
+                    CommandParameter="0" Grid.Row="0" Grid.Column="0" WidthRequest="100" HeightRequest="100" />
+            <Button Text="{Binding Cells[1]}"
+                    Command="{Binding MakeMoveCommand}"
+                    CommandParameter="1" Grid.Row="0" Grid.Column="1" WidthRequest="100" HeightRequest="100" />
+            <Button Text="{Binding Cells[2]}"
+                    Command="{Binding MakeMoveCommand}"
+                    CommandParameter="2" Grid.Row="0" Grid.Column="2" WidthRequest="100" HeightRequest="100" />
+            <Button Text="{Binding Cells[3]}"
+                    Command="{Binding MakeMoveCommand}"
+                    CommandParameter="3" Grid.Row="1" Grid.Column="0" WidthRequest="100" HeightRequest="100" />
+            <Button Text="{Binding Cells[4]}"
+                    Command="{Binding MakeMoveCommand}"
+                    CommandParameter="4" Grid.Row="1" Grid.Column="1" WidthRequest="100" HeightRequest="100" />
+            <Button Text="{Binding Cells[5]}"
+                    Command="{Binding MakeMoveCommand}"
+                    CommandParameter="5" Grid.Row="1" Grid.Column="2" WidthRequest="100" HeightRequest="100" />
+            <Button Text="{Binding Cells[6]}"
+                    Command="{Binding MakeMoveCommand}"
+                    CommandParameter="6" Grid.Row="2" Grid.Column="0" WidthRequest="100" HeightRequest="100" />
+            <Button Text="{Binding Cells[7]}"
+                    Command="{Binding MakeMoveCommand}"
+                    CommandParameter="7" Grid.Row="2" Grid.Column="1" WidthRequest="100" HeightRequest="100" />
+            <Button Text="{Binding Cells[8]}"
+                    Command="{Binding MakeMoveCommand}"
+                    CommandParameter="8" Grid.Row="2" Grid.Column="2" WidthRequest="100" HeightRequest="100" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

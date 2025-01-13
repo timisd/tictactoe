@@ -1,31 +1,18 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
+﻿namespace TicTacToe.Models;
 
-namespace TicTacToe;
-
-public class ComputerPlayer(Button[] buttons, TextBox output) : Player('O', buttons)
+public class ComputerPlayer() : Player('O')
 {
-    private const char Computer = 'O';
-    private const char Player = 'X';
+    private const char computer = 'O';
+    private const char player = 'X';
 
-    private void UpdateOutput(string message)
+    public void MakeMove(GameBoard gameBoard)
     {
-        output.Dispatcher.Invoke(() => output.Text += message);
+        var move = FindBestMove(gameBoard.Cells);
+        gameBoard.MakeMove(move, computer);
     }
 
-    public override async Task ExecuteTurn()
+    private int FindBestMove(char[] board)
     {
-        var bestMove = FindBestMove();
-        if (bestMove != -1) Buttons[bestMove].RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
-    }
-
-    private int FindBestMove()
-    {
-        var board = new char[Buttons.Length];
-        for (var i = 0; i < Buttons.Length; i++)
-            board[i] = Buttons[i].Content.ToString() == string.Empty ? ' ' : Buttons[i].Content.ToString()[0];
-
         var logOutput = string.Empty;
         var bestScore = int.MinValue;
         var move = -1;
@@ -33,7 +20,7 @@ public class ComputerPlayer(Button[] buttons, TextBox output) : Player('O', butt
         for (var i = 0; i < board.Length; i++)
             if (board[i] == ' ')
             {
-                board[i] = Computer;
+                board[i] = computer;
                 var result = Minimax(board, 0, false);
                 logOutput += result.Log;
                 board[i] = ' ';
@@ -44,17 +31,17 @@ public class ComputerPlayer(Button[] buttons, TextBox output) : Player('O', butt
             }
 
         logOutput += $"Best move: {move}, Score: {bestScore}\n";
-        UpdateOutput(logOutput);
+
         return move;
     }
 
     private (int Score, string Log) Minimax(char[] board, int depth, bool isMaximizing)
     {
-        if (GameState.HasPlayerWon(board, Computer))
+        if (board.IsWinner(computer))
             return (10 - depth, string.Empty);
-        if (GameState.HasPlayerWon(board, Player))
+        if (board.IsWinner(player))
             return (depth - 10, string.Empty);
-        if (GameState.IsDraw(board))
+        if (board.IsDraw())
             return (0, string.Empty);
 
         var minimaxOutput = string.Empty;
@@ -66,7 +53,7 @@ public class ComputerPlayer(Button[] buttons, TextBox output) : Player('O', butt
             for (var i = 0; i < board.Length; i++)
                 if (board[i] == ' ')
                 {
-                    board[i] = Computer;
+                    board[i] = computer;
                     var result = Minimax(board, depth + 1, false);
                     board[i] = ' ';
                     bestScore = Math.Max(result.Score, bestScore);
@@ -82,7 +69,7 @@ public class ComputerPlayer(Button[] buttons, TextBox output) : Player('O', butt
             for (var i = 0; i < board.Length; i++)
                 if (board[i] == ' ')
                 {
-                    board[i] = Player;
+                    board[i] = player;
                     var result = Minimax(board, depth + 1, true);
                     board[i] = ' ';
                     bestScore = Math.Min(result.Score, bestScore);
