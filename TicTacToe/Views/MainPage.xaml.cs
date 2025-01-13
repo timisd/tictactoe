@@ -2,7 +2,7 @@
 
 namespace TicTacToe.Views;
 
-public partial class MainPage
+public partial class MainPage : ContentPage
 {
     public MainPage()
     {
