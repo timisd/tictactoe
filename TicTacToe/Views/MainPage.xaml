@@ -3,82 +3,70 @@
              xmlns:local="clr-namespace:TicTacToe.ViewModels"
              x:Class="TicTacToe.Views.MainPage"
              x:DataType="local:MainViewModel">
-    <StackLayout Padding="20">
-        <Label Text="{Binding CurrentPlayer}" FontSize="24" HorizontalOptions="Center" />
-        <Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding CurrentPlayer}" FontSize="24"
+               HorizontalOptions="Center" />
+
+        <Grid Grid.Row="1" Grid.Column="0" Margin="10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="{Binding Cells[0]}"
-                    BorderColor="Grey"
-                    BorderWidth="2"
-                    BackgroundColor="White"
-                    TextColor="Black"
+
+            <Button Grid.Row="0" Grid.Column="0"
+                    Text="{Binding Cells[0]}"
                     Command="{Binding MakeMoveCommand}"
-                    CommandParameter="0" Grid.Row="0" Grid.Column="0" WidthRequest="100" HeightRequest="100" />
-            <Button Text="{Binding Cells[1]}"
-                    BorderColor="Grey"
-                    BorderWidth="2"
-                    BackgroundColor="White"
-                    TextColor="Black"
+                    CommandParameter="0" />
+            <Button Grid.Row="0" Grid.Column="1"
+                    Text="{Binding Cells[1]}"
                     Command="{Binding MakeMoveCommand}"
-                    CommandParameter="1" Grid.Row="0" Grid.Column="1" WidthRequest="100" HeightRequest="100" />
-            <Button Text="{Binding Cells[2]}"
-                    BorderColor="Grey"
-                    BorderWidth="2"
-                    BackgroundColor="White"
-                    TextColor="Black"
+                    CommandParameter="1" />
+            <Button Grid.Row="0" Grid.Column="2"
+                    Text="{Binding Cells[2]}"
                     Command="{Binding MakeMoveCommand}"
-                    CommandParameter="2" Grid.Row="0" Grid.Column="2" WidthRequest="100" HeightRequest="100" />
-            <Button Text="{Binding Cells[3]}"
-                    BorderColor="Grey"
-                    BorderWidth="2"
-                    BackgroundColor="White"
-                    TextColor="Black"
+                    CommandParameter="2" />
+            <Button Grid.Row="1" Grid.Column="0"
+                    Text="{Binding Cells[3]}"
                     Command="{Binding MakeMoveCommand}"
-                    CommandParameter="3" Grid.Row="1" Grid.Column="0" WidthRequest="100" HeightRequest="100" />
-            <Button Text="{Binding Cells[4]}"
-                    BorderColor="Grey"
-                    BorderWidth="2"
-                    BackgroundColor="White"
-                    TextColor="Black"
+                    CommandParameter="3" />
+            <Button Grid.Row="1" Grid.Column="1"
+                    Text="{Binding Cells[4]}"
                     Command="{Binding MakeMoveCommand}"
-                    CommandParameter="4" Grid.Row="1" Grid.Column="1" WidthRequest="100" HeightRequest="100" />
-            <Button Text="{Binding Cells[5]}"
-                    BorderColor="Grey"
-                    BorderWidth="2"
-                    BackgroundColor="White"
-                    TextColor="Black"
+                    CommandParameter="4" />
+            <Button Grid.Row="1" Grid.Column="2"
+                    Text="{Binding Cells[5]}"
                     Command="{Binding MakeMoveCommand}"
-                    CommandParameter="5" Grid.Row="1" Grid.Column="2" WidthRequest="100" HeightRequest="100" />
-            <Button Text="{Binding Cells[6]}"
-                    BorderColor="Grey"
-                    BorderWidth="2"
-                    BackgroundColor="White"
-                    TextColor="Black"
+                    CommandParameter="5" />
+            <Button Grid.Row="2" Grid.Column="0"
+                    Text="{Binding Cells[6]}"
                     Command="{Binding MakeMoveCommand}"
-                    CommandParameter="6" Grid.Row="2" Grid.Column="0" WidthRequest="100" HeightRequest="100" />
-            <Button Text="{Binding Cells[7]}"
-                    BorderColor="Grey"
-                    BorderWidth="2"
-                    BackgroundColor="White"
-                    TextColor="Black"
+                    CommandParameter="6" />
+            <Button Grid.Row="2" Grid.Column="1"
+                    Text="{Binding Cells[7]}"
                     Command="{Binding MakeMoveCommand}"
-                    CommandParameter="7" Grid.Row="2" Grid.Column="1" WidthRequest="100" HeightRequest="100" />
-            <Button Text="{Binding Cells[8]}"
-                    BorderColor="Grey"
-                    BorderWidth="2"
-                    BackgroundColor="White"
-                    TextColor="Black"
+                    CommandParameter="7" />
+            <Button Grid.Row="2" Grid.Column="2"
+                    Text="{Binding Cells[8]}"
                     Command="{Binding MakeMoveCommand}"
-                    CommandParameter="8" Grid.Row="2" Grid.Column="2" WidthRequest="100" HeightRequest="100" />
+                    CommandParameter="8" />
+
         </Grid>
-    </StackLayout>
+
+    </Grid>
+
 </ContentPage>
