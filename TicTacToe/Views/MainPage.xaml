@@ -17,30 +17,66 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Button Text="{Binding Cells[0]}"
+                    BorderColor="Grey"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
                     Command="{Binding MakeMoveCommand}"
                     CommandParameter="0" Grid.Row="0" Grid.Column="0" WidthRequest="100" HeightRequest="100" />
             <Button Text="{Binding Cells[1]}"
+                    BorderColor="Grey"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
                     Command="{Binding MakeMoveCommand}"
                     CommandParameter="1" Grid.Row="0" Grid.Column="1" WidthRequest="100" HeightRequest="100" />
             <Button Text="{Binding Cells[2]}"
+                    BorderColor="Grey"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
                     Command="{Binding MakeMoveCommand}"
                     CommandParameter="2" Grid.Row="0" Grid.Column="2" WidthRequest="100" HeightRequest="100" />
             <Button Text="{Binding Cells[3]}"
+                    BorderColor="Grey"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
                     Command="{Binding MakeMoveCommand}"
                     CommandParameter="3" Grid.Row="1" Grid.Column="0" WidthRequest="100" HeightRequest="100" />
             <Button Text="{Binding Cells[4]}"
+                    BorderColor="Grey"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
                     Command="{Binding MakeMoveCommand}"
                     CommandParameter="4" Grid.Row="1" Grid.Column="1" WidthRequest="100" HeightRequest="100" />
             <Button Text="{Binding Cells[5]}"
+                    BorderColor="Grey"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
                     Command="{Binding MakeMoveCommand}"
                     CommandParameter="5" Grid.Row="1" Grid.Column="2" WidthRequest="100" HeightRequest="100" />
             <Button Text="{Binding Cells[6]}"
+                    BorderColor="Grey"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
                     Command="{Binding MakeMoveCommand}"
                     CommandParameter="6" Grid.Row="2" Grid.Column="0" WidthRequest="100" HeightRequest="100" />
             <Button Text="{Binding Cells[7]}"
+                    BorderColor="Grey"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
                     Command="{Binding MakeMoveCommand}"
                     CommandParameter="7" Grid.Row="2" Grid.Column="1" WidthRequest="100" HeightRequest="100" />
             <Button Text="{Binding Cells[8]}"
+                    BorderColor="Grey"
+                    BorderWidth="2"
+                    BackgroundColor="White"
+                    TextColor="Black"
                     Command="{Binding MakeMoveCommand}"
                     CommandParameter="8" Grid.Row="2" Grid.Column="2" WidthRequest="100" HeightRequest="100" />
         </Grid>
