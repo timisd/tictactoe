@@ -1,4 +1,4 @@
-using TicTacToe.TicTacToe.Models;
+using TicTacToe.Models;
 using Xunit;
 
 namespace TicTacToe.Tests
